@@ -34,7 +34,7 @@ object ClimateService {
    */
   def parseRawData(list: List[(Int, Int, Double)]) : List[Option[CO2Record]] = {
     list.map { record => 
-      val parsedRecord = CO2Record(record._1,record._2,record._3)
+      val parsedRecord =CO2Record(record._1,record._2,record._3)
       if(parsedRecord.isValidPpmValue){
         Some(parsedRecord)
       } else{
